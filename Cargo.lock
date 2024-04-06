@@ -62,6 +62,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "hashp"
+version = "0.1.0"
+dependencies = [
+ "colored",
+ "digest",
+ "dotenv",
+ "sha2",
+]
+
+[[package]]
 name = "lazy_static"
 version = "1.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -90,16 +100,6 @@ dependencies = [
  "cpufeatures",
  "digest",
  "opaque-debug",
-]
-
-[[package]]
-name = "testshahin"
-version = "0.1.0"
-dependencies = [
- "colored",
- "digest",
- "dotenv",
- "sha2",
 ]
 
 [[package]]
