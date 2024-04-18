@@ -21,8 +21,18 @@ fn main() {
 
         let mut hasher = Sha256::new();
         hasher.update(format!("{} {}", secret, input.trim()));
+        let mut first_char_flag = false;
 
         let result = hasher.finalize();
-        println!("{:x}", result);
+        let result = format!("{:x}", result).chars().map(|c| {
+            if !first_char_flag && !c.is_numeric() {
+                first_char_flag = true;
+                c.to_uppercase().next().unwrap()
+            } else {
+                c
+            }
+        }).collect::<String>() + "@";
+
+        println!("{}", result.green());
     }
 }
